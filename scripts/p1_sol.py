@@ -5,9 +5,9 @@ import numpy as np
 
 if __name__ == '__main__':
 	##test values
-	psi = math.pi/2     ## x rot variable
-	theta = math.pi/2   ## y rot variable
-	phi = math.pi/2  	## z rot variable
+	psi =  math.pi/2     ## x rot variable
+	theta = math.pi/2    ## y rot variable
+	phi = math.pi/2  	 ## z rot variable
 	
 	#update output format
 	np.set_printoptions(precision = 2, suppress= True)
@@ -26,6 +26,7 @@ if __name__ == '__main__':
 	
 	#calc total rotaional matrix
 	R_total = np.matmul(Rz, np.matmul(Ry,Rx))
+	print(R_total)
 	
 	#calculate results
 	v_rot_tot = np.dot(R_total, v0)
