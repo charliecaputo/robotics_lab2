@@ -37,7 +37,7 @@ if __name__ == '__main__':
 	print("Transformation 4: \n", H_4)
 	
 	#Transformation 5
-	H_5 = np.matmul(p2.Tx(3), np.matmul(p2.Rx(np.pi/2),p2.Tz(-3)))
+	H_5 = np.matmul(p2.Tx(3), np.matmul(p2.Tz(-3),p2.Rx(np.pi/2)))
 	current_pos = np.dot(H_5, Fixed_Frame)
 	result_5 = current_pos = np.matmul(H_5, p2.Rz(-np.pi/2))
 	print("transformation 5: \n", result_5)
