@@ -23,7 +23,7 @@ if __name__ == '__main__':
 	
 	#transformation 2
 	H_2 = np.matmul(p2.Tz(0.5), np.matmul(p2.Tx(2.5), p2.Ty(-1.5)))
-	result_2 = current_pos = np.dot(H_2, current_pos)
+	result_2 = current_pos = np.dot(H_2, Fixed_Frame)
 	print("Transformation 2: \n", result_2)
 	
 	#transformation 3
@@ -33,12 +33,13 @@ if __name__ == '__main__':
 	
 	#transformation 4 
 	H_4 = np.matmul(p2.Tz(0.5), np.matmul(p2.Ty(-1.5),p2.Tx(2.5)))
-	result_4 = current_pos = np.dot(H_3, Fixed_Frame)
-	print("Transformation 3: \n", H_4)
+	result_4 = current_pos = np.dot(H_4, Fixed_Frame)
+	print("Transformation 4: \n", H_4)
 	
 	#Transformation 5
-	H_5 = np.matmul(p2.Rx(np.pi/2), np.matmul(p2.Tx(3), np.matmul(p2.Tz(-3), p2.Rz(-np.pi/2))))
-	result_5 = current_pos = np.dot(H_5, current_pos)
+	H_5 = np.matmul(p2.Tx(3), np.matmul(p2.Rx(np.pi/2),p2.Tz(-3)))
+	current_pos = np.dot(H_5, Fixed_Frame)
+	result_5 = current_pos = np.matmul(H_5, p2.Rz(-np.pi/2))
 	print("transformation 5: \n", result_5)
 	
 	
